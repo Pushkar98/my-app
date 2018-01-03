@@ -1,39 +1,71 @@
-import React from "react";
-import { AppRegistry, View, StatusBar,StyleSheet,TouchableOpacity} from "react-native";
-import { Container, Body, Content, Header, Left, Right, Icon, Title, Input, Item, Label, Button, Text,Footer,FooterTab } from "native-base";
+import React , { Component } from "react";
+import { AppRegistry, View, StatusBar,StyleSheet,TouchableOpacity,ScrollView} from "react-native";
+import { Container, Header, Content, Footer, Title,FooterTab, Button, Icon, Text} from 'native-base';
 import { connect} from 'react-redux';
-  class CryptoTracker extends React.Component{
+import Spinner from 'react-native-loading-spinner-overlay';
 
-    render(){
-        console.log('Jai Hind');
-        return(
-            
-            <Container style={styles.container}>
-             <Header>
-            <Title>Currencies</Title>
-                </Header>
-                    <View>
-                <Text>
-                 Currency will be displayed here
-                    </Text>
-                    </View>
-                  
-                </Container>
+import FetchCoinData from './../Actions/FetchCoinData';
+import CoinCard from './CoinCard';
+
+class CryptoTracker extends Component {
+
+    componentDidMount() {
+        this.props.FetchCoinData();
+    }
+
+    renderCoinCards() {
+
+        const { crypto } = this.props;
+        console.log('Jai Bhim');
+        console.log(this.props);
+
+        return crypto.data.map((coin) => 
+            <CoinCard 
+                key={coin.name}
+                name={coin.name}
+                symbol={coin.symbol}
+                price_usd={coin.price_usd}
+                percent_change_24h={coin.percent_change_24h}
+                percent_change_7d={coin.percent_change_7d}
+            />
+        ) 
+    }
+
+
+    render() {
+
+        const { crypto } = this.props;
+        console.log(crypto);
+     
+
+        return (
+            <ScrollView style={styles.contentContainer}>
+
+                { (crypto.isFetching) ? <Spinner
+                        visible={crypto.isFetching}
+                        textContent={"Loading..."}
+                        textStyle={{color: '#253145'}}
+                        animation="fade"
+                    /> :
+                this.renderCoinCards()}
+            </ScrollView>
         )
+        
+
     }
 }
+
+const styles = {
+    contentContainer: { 
+        paddingBottom: 100,
+        paddingTop: 55
+    }
+}
+
 function mapStateToProps(state) {
     return {
         crypto: state.crypto
     }
 }
 
-export default connect(mapStateToProps)(CryptoTracker)
-
-const styles= StyleSheet.create({
-    container:{
-        alignItems:'center',
-    },
-    
-    })
-
+export default connect(mapStateToProps, { FetchCoinData })( CryptoTracker );

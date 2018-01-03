@@ -17,25 +17,28 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "postinstall": "remotedev-debugger — hostname localhost — port 5678 — injectserver"
+    "postinstall": "remotedev-debugger — hostname localhost — port 8000 — injectserver"
   },
   "remotedev": {
     "hostname": "localhost",
-    "port": 5678
+    "port": 8000
   },
   "jest": {
     "preset": "jest-expo"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "expo": "^23.0.4",
     "native-base": "^2.3.5",
     "react": "16.0.0",
     "react-native": "0.50.3",
+    "react-native-loading-spinner-overlay": "^0.5.2",
     "react-native-vector-icons": "^4.4.3",
     "react-navigation": "^1.0.0-beta.22",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "remote-redux-devtools": "^0.5.12"
   }
 }
