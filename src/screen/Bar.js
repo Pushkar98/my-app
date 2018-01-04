@@ -23,7 +23,7 @@ const styles= StyleSheet.create({
     bar:{
         borderTopColor: '#fff',
         borderTopWidth:4,
-        backgroundColor: '#ec2e4a',
+        backgroundColor: '#1565c0',
         flexDirection:'row',
 
     },
@@ -41,6 +41,11 @@ barBottom:{
     color:'#000',
     fontSize:14,
     fontWeight:'bold'
+},
+barItem:{
+    flex:1,
+    padding:18,
+    alignItems:'center'
 }
     
     });

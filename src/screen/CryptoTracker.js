@@ -36,19 +36,30 @@ class CryptoTracker extends Component {
 
         const { crypto } = this.props;
         console.log(crypto);
-     
-
-        return (
-            <ScrollView style={styles.contentContainer}>
-
-                { (crypto.isFetching) ? <Spinner
+ 
+        if (crypto.isFetching) {
+            return (
+                <View>
+                    <Spinner
                         visible={crypto.isFetching}
                         textContent={"Loading..."}
                         textStyle={{color: '#253145'}}
                         animation="fade"
-                    /> :
-                this.renderCoinCards()}
+                    />
+                </View>
+            )
+        }
+
+        return (
+            <View style={styles.container}>
+                     <View style={styles.header}>
+                    <Text style={styles.headerText}>CryptoCurrency</Text>
+                </View>
+            <ScrollView style={styles.contentContainer}>
+                {this.renderCoinCards()}
             </ScrollView>
+            </View>
+
         )
         
 
@@ -59,7 +70,25 @@ const styles = {
     contentContainer: { 
         paddingBottom: 100,
         paddingTop: 55
-    }
+    },
+    container: {
+        flex: 1,
+    },
+    header: {
+        backgroundColor: '#1565c0',
+        alignItems: 'center',
+        justifyContent:'center',
+        borderBottomWidth: 5,
+        borderBottomColor: '#ddd'
+    },
+    headerText: {
+        color: 'white',
+        fontSize: 26,
+        padding: 18,
+        marginTop:10,
+        fontWeight: "bold",        
+
+    },
 }
 
 function mapStateToProps(state) {

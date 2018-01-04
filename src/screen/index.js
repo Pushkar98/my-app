@@ -68,13 +68,15 @@ export default MainScreenNavigator;
         zIndex:11,
         right:20,
         bottom: 90,
-        backgroundColor: '#E91E63',
+        backgroundColor: '#1565c0',
         width:90,
         height:90,
         borderRadius:50,
         alignItems:'center',
         justifyContent:'center',
         elevation:8,
+        alignItems: 'center',
+
     },
     addButtonText:{
         color:'#fff',

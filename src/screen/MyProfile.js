@@ -3,7 +3,7 @@ import { TabNavigator} from "react-navigation";
 import {StyleSheet,View,Text, AppRegistry} from 'react-native';
 import Header from './Header';
 import Bar from './Bar';
-//import PhotoGrid from './PhotoGrid';
+import PhotoGrid from './PhotoGrid';
 
 export default class MyProfile extends Component{
     render(){
