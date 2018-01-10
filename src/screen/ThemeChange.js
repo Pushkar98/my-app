@@ -1,6 +1,10 @@
-import React from "react";
-import { AppRegistry, View, StatusBar,StyleSheet} from "react-native";
-import { Container, Body, Content, Header, Left, Right, Icon, Title, Input, Item, Label, Button, Text } from "native-base";
+import React ,{ PureCompnent }from "react";
+import { Linking,Switch,Text,TouchableOpacity, View, StatusBar,StyleSheet} from "react-native";
+import { Container, Body, Content, Header, Left, Right, Icon, Title, Input, Item, Label, Button,} from "native-base";
+import { connect } from 'react-redux';
+
+import type { State, ThemeColorsData } from '../../types';
+
 
 
 export default class ThemeChange extends React.Component{

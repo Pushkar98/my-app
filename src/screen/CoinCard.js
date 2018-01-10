@@ -17,6 +17,7 @@ const CoinCard = ({ symbol, name, price_usd, percent_change_24h, percent_change_
     return (
 
         <View style={container}>
+        
                     <View style={upperRow}>
                     <Image
                     style={styles.image}

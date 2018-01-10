@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Button, Text, Icon, Footer, FooterTab } from "native-base";
 import { TabNavigator } from "react-navigation";
 import CryptoTracker from './CryptoTracker';
-import MyWallet from './MyWallet';
+import MyWallet from './WalletScreen/MyWallet';
 import ThemeChange from './ThemeChange';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import AddCryptos from './AddCryptos';

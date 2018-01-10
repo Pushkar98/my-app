@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "jest-expo": "23.0.0",
     "react-native-scripts": "1.8.1",
     "react-test-renderer": "16.0.0",
@@ -29,16 +30,31 @@
   "dependencies": {
     "axios": "^0.17.1",
     "expo": "^23.0.4",
+    "graphql": "^0.12.3",
+    "graphql-relay": "^0.5.4",
+    "invariant": "^2.2.2",
     "native-base": "^2.3.5",
     "react": "16.0.0",
     "react-native": "0.50.3",
+    "react-native-device-info": "^0.13.0",
     "react-native-loading-spinner-overlay": "^0.5.2",
-    "react-native-vector-icons": "^4.4.3",
+    "react-native-vector-icons": "^4.5.0",
     "react-navigation": "^1.0.0-beta.22",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
     "remote-redux-devtools": "^0.5.12"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pushkar98/my-app.git"
+  },
+  "author": "Pushkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pushkar98/my-app/issues"
+  },
+  "homepage": "https://github.com/Pushkar98/my-app#readme"
 }

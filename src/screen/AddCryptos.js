@@ -4,6 +4,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import { AppRegistry, View, StatusBar,StyleSheet,TextInput,TouchableOpacity} from "react-native";
 import { Container, Header, Title, Content, Button, Icon, Text, Right, Body, Left, Picker, Form,  Input as FormItem } from "native-base";
 const Item = Picker.Item;
+type Props = {
+  navigation: Navigation};
 export default class AddCryptos extends React.Component{
     constructor(props) {
         super(props);
@@ -16,6 +18,10 @@ export default class AddCryptos extends React.Component{
           selected2: value
         });
       }
+      _onSubmitPress = () => {
+        this.props.navigation.navigate('MyWallet');
+      }
+    
     render(){
         return(
             <View style={styles.container}>
@@ -75,6 +81,7 @@ export default class AddCryptos extends React.Component{
                     <Text style={styles.addButtonText}></Text> 
                    </TouchableOpacity>
                    <TouchableOpacity
+                   onPress={this._onSubmitPress}
                      style={[styles.button, { backgroundColor: '#008000' }]}
                    >
                    <Icon name="add" />
