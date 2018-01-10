@@ -1,23 +1,25 @@
-
 import React , { Component } from 'react';
 import { 
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 import { images } from '../Utils/CoinIcons';
 
 
 
-const CoinCard = ({ symbol, name, price_usd, percent_change_24h, percent_change_7d }) => {
+const CoinCard = ({ symbol, name, price_usd, percent_change_24h, percent_change_7d,navigation }) => {
 
  
     
     return (
 
         <View style={container}>
-        
+        <TouchableOpacity
+            onPress={() => navigation.navigate('CryptoDetails')}
+            >
                     <View style={upperRow}>
                     <Image
                     style={styles.image}
@@ -40,7 +42,7 @@ const CoinCard = ({ symbol, name, price_usd, percent_change_24h, percent_change_
                 </Text>
 
                  </View> 
-
+</TouchableOpacity>
         </View> 
     );
 }

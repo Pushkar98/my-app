@@ -27,6 +27,7 @@ class CryptoTracker extends Component {
                 price_usd={coin.price_usd}
                 percent_change_24h={coin.percent_change_24h}
                 percent_change_7d={coin.percent_change_7d}
+                navigation={this.props.navigation}
             />
         ) 
     }

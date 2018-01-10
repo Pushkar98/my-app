@@ -7,6 +7,7 @@ import ThemeChange from './ThemeChange';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import AddCryptos from './AddCryptos';
 import MyProfile from './MyProfile';
+import CryptoDetails from './CryptoDetails';
 
 
 const MainScreenNavigator = TabNavigator(
@@ -15,7 +16,8 @@ const MainScreenNavigator = TabNavigator(
       MyWallet: { screen: MyWallet },
       ThemeChange:{screen: ThemeChange},
       AddCryptos:{screen: AddCryptos},
-      MyProfile:{screen:MyProfile}
+      MyProfile:{screen:MyProfile},
+      CryptoDetails:{screen:CryptoDetails}
       
     },
     {
