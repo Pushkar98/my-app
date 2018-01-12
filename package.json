@@ -30,8 +30,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "expo": "^23.0.4",
-    "graphql": "^0.12.3",
-    "graphql-relay": "^0.5.4",
+    "immutable": "^3.8.2",
     "invariant": "^2.2.2",
     "native-base": "^2.3.5",
     "react": "16.0.0",

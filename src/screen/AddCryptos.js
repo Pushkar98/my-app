@@ -3,21 +3,18 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Entypo from 'react-native-vector-icons/Entypo';
 import { AppRegistry, View, StatusBar,StyleSheet,TextInput,TouchableOpacity} from "react-native";
 import { Container, Header, Title, Content, Button, Icon, Text, Right, Body, Left, Picker, Form,  Input as FormItem } from "native-base";
-const Item = Picker.Item;
+import { DB_CONFIG } from '../config';
+
+
 type Props = {
   navigation: Navigation};
 export default class AddCryptos extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-          selected2: undefined
         };
       }
-      onValueChange2() {
-        this.setState({
-          selected2: value
-        });
-      }
+     
       _onSubmitPress = () => {
         this.props.navigation.navigate('MyWallet');
       }
@@ -30,26 +27,10 @@ export default class AddCryptos extends React.Component{
                 </View>
                 <View style={styles.staticContainer}>
                     <Text style={styles.Text1}>Select a CryptoCurrency:</Text>
-                
-                <Form>
-                  <Picker
-                    mode="dropdown"
-                    placeholder=">Choose a Crypto"
-                    selectedValue={this.state.selected2}
-                    onValueChange={this.onValueChange2.bind(this)}
-                  >
-                    <Item label="BITCOIN" value="key0" />
-                     <Item label="Ripple" value="key1" />
-                    <Item label="Ethereum" value="key2" />
-                    <Item label="Bitcoin-Cash" value="key3" />
-                    <Item label="Cardano" value="key4" /> 
-                    <Item label="Nem" value="key5" />
-                     <Item label="Stellar" value="key6" />
-                    <Item label="Litecoin" value="key7" />
-                    <Item label="Iota" value="key8" />
-                    <Item label="Tran" value="key9" />
-                  </Picker>
-                </Form>
+                    <TextInput style={styles.textInput} 
+                    placeholder='>0'
+                    placeholderTextColor='#D3D3D3'
+                    />
                 </View>
                 <View style={styles.staticContainer}>
                     <Text style={styles.Text1}>No of Stocks:</Text>

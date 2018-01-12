@@ -19,15 +19,3 @@ export type ThemeColorsData = {
   +selectionColor: ?string,
 };
 
-export type DeviceInfoType = {
-  +isEmulator: boolean,
-};
-export type HoldingData = {
-  +amountOfCoin: string,
-  +dateBuy: Date,
-  +id: any,
-  +name: string,
-  +priceByCoin: string,
-  +priceTotalPay: string,
-  +cryptoId: any,
-};

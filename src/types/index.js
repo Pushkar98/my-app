@@ -7,6 +7,7 @@ import type {
 } from 'react-navigation/lib-rn/TypeDefinition';
 import type { Action } from './action';
 import type { AppState, CryptosState } from './state';
+import { toggleTheme } from '../../actions/app';
 
 export type RelayType = any;
 export type Navigation = NavigationScreenProp<
