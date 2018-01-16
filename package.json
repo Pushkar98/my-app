@@ -30,6 +30,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "expo": "^23.0.4",
+    "firebase": "^4.8.2",
     "immutable": "^3.8.2",
     "invariant": "^2.2.2",
     "native-base": "^2.3.5",

@@ -24,6 +24,8 @@ import Spinner from "react-native-loading-spinner-overlay";
 import FetchCoinData from "./../Actions/FetchCoinData";
 import FetchCoinDetails from "./../Actions/FetchCoinDetails";
 import CoinCard from "./CoinCard";
+import CryptoDetails from "./CryptoDetails";
+//import liveDetails from "./liveDetails";
 
 class CryptoTracker extends Component {
   componentDidMount() {
@@ -32,12 +34,28 @@ class CryptoTracker extends Component {
 
   navigate(id) {
     this.props.FetchCoinDetails(id);
+    if (FetchCoinDetails(id).isFetching) {
+      return (
+        <View>
+          <Spinner
+            visible={FetchCoinDetails(id).isFetching}
+            textContent={"Loading..."}
+            textStyle={{ color: "#253145" }}
+            animation="fade"
+          />
+          <CryptoDetails
+            key={FetchCoinDetails(id).name}
+            name={FetchCoinDetails(id).name}
+            total_supply={FetchCoinDetails(id).total_supply}
+          />
+        </View>
+      );
+    }
     this.props.navigation.navigate("CryptoDetails");
   }
 
   renderCoinCards() {
     const { crypto } = this.props;
-
     return crypto.data.map(coin => (
       <CoinCard
         key={coin.name}

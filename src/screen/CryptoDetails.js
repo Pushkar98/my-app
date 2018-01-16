@@ -3,35 +3,33 @@ import { StyleSheet, View, Text } from "react-native";
 import { connect } from "react-redux";
 import type { ThemeColorsData } from "../../types";
 
-class CryptoDetails extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.headerText}>CryptoDetails</Text>
-        </View>
-        <View style={[styles.root, { backgroundColor: "#1565c0" }]}>
-          <Text style={styles.headerText1}> Ripple (XRP) Details:</Text>
-        </View>
-        <View style={styles.staticContainer}>
-          <Text style={styles.Text1}>Market Rank :3</Text>
-        </View>
-        <View style={styles.staticContainer}>
-          <Text style={styles.Text1}>Available Supply :38739142811.0</Text>
-        </View>
-        <View style={styles.staticContainer}>
-          <Text style={styles.Text1}>Total Supply :99993093880.0</Text>
-        </View>
-        <View style={styles.staticContainer}>
-          <Text style={styles.Text1}>Market Cap(USD) :76528789.0</Text>
-        </View>
-        <View style={styles.staticContainer}>
-          <Text style={styles.Text1}>ETH to USD :1.9754</Text>
-        </View>
+const CryptoDetails = ({ symbol, name, total_supply }) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>CryptoDetails</Text>
       </View>
-    );
-  }
-}
+      <View style={[styles.root, { backgroundColor: "#1565c0" }]}>
+        <Text style={styles.headerText1}> Ethereum INR Details:</Text>
+      </View>
+      <View style={styles.staticContainer}>
+        <Text style={styles.Text1}>Rank: 2</Text>
+      </View>
+      <View style={styles.staticContainer}>
+        <Text style={styles.Text1}>Available Supply :6994193.0</Text>
+      </View>
+      <View style={styles.staticContainer}>
+        <Text style={styles.Text1}>Total Supply :96994193.0</Text>
+      </View>
+      <View style={styles.staticContainer}>
+        <Text style={styles.Text1}>Market Cap(INR) :976953240120</Text>
+      </View>
+      <View style={styles.staticContainer}>
+        <Text style={styles.Text1}>ETH to INR :82241.554575</Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -87,10 +85,5 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3
   }
 });
-function mapStateToProps(state) {
-  return {
-    crypto: state.crypto
-  };
-}
 
-export default connect(mapStateToProps)(CryptoDetails);
+export default CryptoDetails;

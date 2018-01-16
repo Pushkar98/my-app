@@ -12,15 +12,15 @@ import {
 } from "native-base";
 import { TabNavigator } from "react-navigation";
 import { StyleSheet, View } from "react-native";
-import WalletScreenNavigator from "./WalletTabs";
-export default class MyWallet extends Component {
+import DetailScreenNavigator from "./cryptoDetailTab";
+export default class liveDetails extends Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.headerText}>My Wallet</Text>
+          <Text style={styles.headerText}>Crypto Details</Text>
         </View>
-        <WalletScreenNavigator />
+        <DetailScreenNavigator />
       </View>
     );
   }

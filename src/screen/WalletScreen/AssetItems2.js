@@ -2,23 +2,23 @@ import React, { PureComponent } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { colors } from "../../Utils/Constants";
 import AddCryptos from "../AddCryptos";
-class AssetItem extends PureComponent<Props, {}> {
+class AssetItem1 extends PureComponent<Props, {}> {
   state = {};
   render() {
     return (
       <View style={[styles.root, { backgroundColor: "#1565c0" }]}>
         <View style={styles.wrapper}>
           <View style={styles.itemWrapper}>
-            <Text style={{ color: "#ffffff" }}>BTC</Text>
+            <Text style={{ color: "#ffffff" }}>ETH</Text>
           </View>
           <View style={styles.itemWrapper}>
-            <Text style={{ color: "#ffffff" }}>2</Text>
+            <Text style={{ color: "#ffffff" }}>1</Text>
           </View>
           <View style={styles.itemWrapper}>
-            <Text style={{ color: "#ffffff" }}>$ 1391.50</Text>
+            <Text style={{ color: "#ffffff" }}>$ 1291.83</Text>
           </View>
           <View style={styles.itemWrapper}>
-            <Text style={{ color: "#ffffff" }}>$ 2783</Text>
+            <Text style={{ color: "#ffffff" }}>$ 1291.83</Text>
           </View>
         </View>
       </View>
@@ -26,7 +26,7 @@ class AssetItem extends PureComponent<Props, {}> {
   }
 }
 
-export default AssetItem;
+export default AssetItem1;
 const styles = StyleSheet.create({
   root: {
     height: 50,

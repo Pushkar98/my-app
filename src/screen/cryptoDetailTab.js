@@ -2,15 +2,14 @@ import React from "react";
 import { TabNavigator, TabBarTop } from "react-navigation";
 import Entypo from "react-native-vector-icons/Entypo";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import WalletPieTab from "./WalletPie";
-import WalletAssets from "./WalletAssets";
-import colors from "../../Utils/Constants";
+import CryptoDetails from "./CryptoDetails";
+import colors from "../Utils/Constants";
 const ICON_SIZE = 30;
 
-const WalletSreenNavigator = TabNavigator(
+const DetailScreenNavigator = TabNavigator(
   {
     WalletAssets: {
-      screen: WalletAssets,
+      screen: CryptoDetails,
       navigationOptions: () => ({
         tabBarIcon: ({ tintColor }) => (
           <Entypo color={tintColor} name="list" size={ICON_SIZE} />
@@ -18,7 +17,7 @@ const WalletSreenNavigator = TabNavigator(
       })
     },
     WalletPie: {
-      screen: WalletPieTab,
+      screen: CryptoDetails,
       navigationOptions: () => ({
         tabBarIcon: ({ tintColor }) => (
           <MaterialCommunityIcons
@@ -53,4 +52,4 @@ const WalletSreenNavigator = TabNavigator(
     }
   }
 );
-export default WalletSreenNavigator;
+export default DetailScreenNavigator;

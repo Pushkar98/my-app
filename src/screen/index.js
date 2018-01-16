@@ -8,6 +8,7 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import AddCryptos from "./AddCryptos";
 import MyProfile from "./MyProfile";
 import CryptoDetails from "./CryptoDetails";
+import liveDetails from "./liveDetails";
 
 const MainScreenNavigator = TabNavigator(
   {
@@ -16,7 +17,8 @@ const MainScreenNavigator = TabNavigator(
     ThemeChange: { screen: ThemeChange },
     AddCryptos: { screen: AddCryptos },
     MyProfile: { screen: MyProfile },
-    CryptoDetails: { screen: CryptoDetails }
+    CryptoDetails: { screen: CryptoDetails },
+    liveDetails: { screen: liveDetails }
   },
   {
     tabBarPosition: "bottom",
@@ -79,9 +81,9 @@ const styles = StyleSheet.create({
     right: 20,
     bottom: 90,
     backgroundColor: "#1565c0",
-    width: 90,
-    height: 90,
-    borderRadius: 50,
+    width: 100,
+    height: 100,
+    borderRadius: 70,
     alignItems: "center",
     justifyContent: "center",
     elevation: 8,
